@@ -1,68 +1,809 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+html, body, #root {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  height: 100%;
+  background: transparent; /* or background: black; if you prefer */
+}
+
+
+.card{
+    background: #ffffff;          /* ADD THIS */
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+     height: 400px;                  /* OPTIONAL but recommended */
+}
+
+.app-container {
   min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.getstarted-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image */
+  background-image: url('/Users/samio_ayman/FYP-Fuelnomic/web-app/src/assets/GetStarted2Image.jpg'); /* replace with your image path */
+  background-size: cover;       /* make it cover the whole page */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* no tiling */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.getstarted-button {
+  padding: 16px 45px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ea6666 0%, #fc2938 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.getstarted-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ea6666 0%, #fc2938 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.getstarted-logo{
+  margin-top: 50px;
+  margin-bottom: 45px;
+  width: 140px;
+  height: 110px;
+  margin-left: 10px;
+  
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #1e293b; /* dark blue */
+  font-weight: bold;
+}
+
+/* Error Message */
+.error-message {
+  color: #dc2626; /* red */
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+.primary-btn {
+  background-color: #fc2938; /* blue */
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #d10202; /* darker blue */
+}
+
+/* Register Text */
+.register-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: ; /* slate gray */
+  font-weight: bold;
+}
+
+.register-text a {
+  color: #fc2938;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: make background fully cover */
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fuelnomicTittle{
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fc2938; /* blue */
+  margin-bottom: 20px;
+}
+
+.modern-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* removes default arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='gray' d='M5.5 7.5L10 12l4.5-4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.modern-select:focus {
+  outline: none;
+  border-color: #4f46e5; /* nice modern blue */
+}
+
+.login-form input,
+.login-form select {
+  width: 100%;
+  padding: 0.75rem 1rem; /* top/bottom 12px, left/right 16px */
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.modern-select {
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='gray' d='M5.5 7.5L10 12l4.5-4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 2.5rem; /* room for arrow */
+  cursor: pointer;
+}
+
+.register-card{
+    background: #ffffff;          /* ADD THIS */
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+     height: 500px;                  /* OPTIONAL but recommended */
+}
+
+
+/* Collapsed State */
+.sidebar-container.collapsed {
+  width: 90px; /* Slightly increased */
+}
+
+/* Sidebar Header with more padding */
+.sidebar-header {
+  padding: 28px 24px; /* Increased padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo with larger icon */
+.logo-icon {
+  font-size: 32px; /* Increased size */
+  color: #3498db;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 1.6rem; /* Increased size */
+  font-weight: 700;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+/* Menu Items with more spacing */
+.sidebar-menu {
+  flex: 1;
+  padding: 24px 0; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Increased gap */
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #bdc3c7;
+  padding: 16px 24px; /* Increased padding */
+  margin: 0 12px; /* Increased margin */
+  border-radius: 10px; /* Slightly larger radius */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.sidebar-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(8px); /* Increased movement */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-menu-item.active {
+  background: rgba(52, 152, 219, 0.25); /* More prominent */
+  color: white;
+  border-left: 5px solid #3498db; /* Thicker border */
+  font-weight: 600;
+}
+
+.menu-item-icon {
+  font-size: 22px; /* Larger icons */
+  min-width: 28px; /* More space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item-text {
+  margin-left: 18px; /* More spacing */
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.9;
+  text-align: left;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 24px; /* Increased padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.signout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers horizontally */
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  padding: 14px 24px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px; /* Increased font size */
+  font-weight: 500;
+
+}
+.signout-icon {
+  font-size: 24px; /* Increased icon size */
+  min-width: 28px;
+}
+
+.signout-text {
+  margin-left: 12px;
+  white-space: nowrap;
+  font-size: 20px; /* Match button font size */
+}
+
+/* Pulse animation for active indicator */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
   }
-  a:hover {
-    color: #747bff;
+  70% {
+    box-shadow: 0 0 0 12px rgba(46, 204, 113, 0);
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
   }
 }
+
+.signout-btn:hover {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+}
+
+.signout-icon {
+  font-size: 22px; /* Larger icon */
+  min-width: 28px;
+}
+
+.signout-text {
+  margin-left: 18px; /* More spacing */
+  white-space: nowrap;
+}
+
+/* Collapsed State Styles */
+.sidebar-container.collapsed .logo-text,
+.sidebar-container.collapsed .menu-item-text,
+.sidebar-container.collapsed .signout-text {
+  display: none;
+}
+
+.sidebar-container.collapsed .sidebar-menu-item {
+  padding: 16px;
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.sidebar-container.collapsed .sidebar-menu-item:hover {
+  transform: none;
+}
+
+/* Tooltip on hover for collapsed sidebar */
+.sidebar-container.collapsed .sidebar-menu-item:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 85px; /* Adjusted for new width */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #504a2c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease;
+}
+
+.sidebar-container.collapsed .sidebar-header {
+  padding: 28px 12px;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar-container {
+    transform: translateX(-100%);
+    width: 300px; /* Wider on mobile */
+  }
+
+  .sidebar-container.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-container.collapsed {
+    transform: translateX(-100%);
+    width: 300px;
+  }
+
+  .sidebar-container.collapsed.open {
+    transform: translateX(0);
+  }
+}
+
+/* For tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar-container:not(.collapsed) {
+    width: 240px;
+  }
+}
+
+
+ .main-content {
+  margin-left: 350px; /* Match sidebar expanded width */
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Use 'all' or margin-left */
+  min-height: 100vh;
+  background: #f8f9fa;
+  width: calc(100% - 350px); /* Important for responsive width */
+  transition-property: margin-left, width; /* Explicitly transition both */
+}
+
+ .sidebar-container.collapsed + .main-content { 
+  margin-left: 90px; /* Match sidebar collapsed width */
+  width: calc(100% - 90px); /* Adjust width accordingly */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%; /* Full width on mobile */
+    padding: 80px 20px 20px;
+  }
+}
+
+/* Active Indicator */
+.active-indicator {
+  position: absolute;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: #2ecc71;
+  border-radius: 50%;
+  opacity: 0; /* IMPORTANT: Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+/* Show only when parent link is active */
+.sidebar-menu-item.active .active-indicator {
+  opacity: 1;
+  animation: pulse 2s infinite;
+}
+
+/* Make sure the parent has position: relative */
+.sidebar-menu-item {
+  position: relative; /* IMPORTANT for absolute positioning */
+  display: flex;
+  align-items: center;
+  color: #bdc3c7;
+  padding: 16px 24px;
+  margin: 0 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+/* Link styles for logo */
+.sidebar-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+}
+
+/* Mobile toggle button */
+.sidebar-mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.sidebar-mobile-toggle:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .sidebar-mobile-toggle {
+    display: block;
+  }
+}
+
+/* Overlay for mobile */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+  }
+}
+
+/* Collapse button */
+.sidebar-collapse-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 36px; /* Larger */
+  height: 36px; /* Larger */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-collapse-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(180deg);
+}
+
+.sidebar-container.collapsed .sidebar-collapse-btn {
+  position: absolute;
+  right: -18px; /* Adjusted for new width */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3498db;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 350px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%); /* Dark gradient */
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #333;
+}
+
+/* Update other sidebar elements to match the red/black theme */
+
+/* Logo icon - make it red */
+.logo-icon {
+  font-size: 32px;
+  color: #fc2938; /* Red from your theme */
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fc2938, #ea6666); /* Red gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+/* Menu items with red accents */
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  padding: 16px 24px;
+  margin: 0 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.sidebar-menu-item:hover {
+  background: rgba(252, 41, 56, 0.1); /* Red tint on hover */
+  color: white;
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(252, 41, 56, 0.15);
+}
+
+.sidebar-menu-item.active {
+  background: rgba(252, 41, 56, 0.2); /* Red background for active */
+  color: white;
+  border-left: 5px solid #fc2938; /* Red border */
+  font-weight: 600;
+}
+
+/* Active indicator - make it red */
+.active-indicator {
+  position: absolute;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background: #fc2938; /* Red instead of green */
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-menu-item.active .active-indicator {
+  opacity: 1;
+  animation: pulseRed 2s infinite;
+}
+
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 41, 56, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(252, 41, 56, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(252, 41, 56, 0);
+  }
+}
+
+/* Sidebar header border */
+.sidebar-header {
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333; /* Darker border */
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid #333; /* Darker border */
+}
+
+/* Collapse button - red theme */
+.sidebar-collapse-btn {
+  background: rgba(252, 41, 56, 0.1); /* Red tint */
+  border: 1px solid rgba(252, 41, 56, 0.3);
+  color: #fc2938;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-collapse-btn:hover {
+  background: rgba(252, 41, 56, 0.2);
+  transform: rotate(180deg);
+}
+
+.sidebar-container.collapsed .sidebar-collapse-btn {
+  position: absolute;
+  right: -12px; /* Ensure it's fully visible */
+  top: 40%;
+  transform: translateY(-50%);
+  background: #fc2938; /* Solid red when collapsed */
+  color: white;
+  box-shadow: 0 4px 12px rgba(252, 41, 56, 0.4);
+  z-index: 1001;
+}
+
+/* Mobile toggle button - red */
+.sidebar-mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #fc2938; /* Red */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(252, 41, 56, 0.3);
+  transition: all 0.3s ease;
+}
+
+.sidebar-mobile-toggle:hover {
+  background: #d10202; /* Darker red */
+  transform: scale(1.05);
+}
+
+/* Sign out button - red theme */
+.signout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(252, 41, 56, 0.1); /* Red tint */
+  border: 1px solid rgba(252, 41, 56, 0.3);
+  color: #fc2938;
+  padding: 14px 24px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.signout-btn:hover {
+  background: rgba(252, 41, 56, 0.2);
+  border-color: #fc2938;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(252, 41, 56, 0.2);
+}
+
+/* Tooltip background for collapsed state */
+.sidebar-container.collapsed .sidebar-menu-item:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 85px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a1a; /* Dark background */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease;
+  border: 1px solid #333;
+}
+
+.main-content-sex{
+  margin-left: 350px; /* Match sidebar expanded width */
+  margin-right: 90px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Use 'all' or margin-left */
+  min-height: 100vh;
+  background: #f8f9fa;
+  width: calc(100% - 350px); /* Important for responsive width */
+  transition-property: margin-left, width; /* Explicitly transition both */
+}
+

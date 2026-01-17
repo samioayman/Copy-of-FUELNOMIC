@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Wrapper from "./pages/Wrapper";
+import GetStarted from "./pages/GetStarted";
+import User_Management from "./pages/User_Management";
+import Fuel_Configuration from "./pages/Fuel_Configuration";
+import Station_Management from "./pages/Station_Management";
+import Transaction_Management from "./pages/Transaction_Management";
+import Notification_News from "./pages/Notification_News";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+
+      <Routes>
+
+         <Route path="/" element={<GetStarted />} />
+        {/* home */}
+        <Route path="/home" element={<Home />} />
+
+        {/* register */}
+        <Route path="/register" element={<Register />} />
+
+        {/* login */}
+        <Route path="/login" element={<Login />} />
+
+
+
+        
+        {/* user-management */}
+        <Route path="/user-management" element={<User_Management />} />
+
+        {/* fuel-configuration */}
+        <Route path="/fuel-configuration" element={<Fuel_Configuration />} />
+
+        {/* station-management */}
+        <Route path="/station-management" element={<Station_Management />} />
+
+        {/* transaction-management */}
+        <Route path="/transaction-management" element={<Transaction_Management />} />
+
+        {/* notification-news */}
+        <Route path="/notification-news" element={<Notification_News />} />
+
+        
+
+        {/* dashboard */}
+        <Route
+          path="/dashboard"
+          element={
+            <Wrapper>
+              <Dashboard />
+            </Wrapper>
+          }
+        />
+       
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
