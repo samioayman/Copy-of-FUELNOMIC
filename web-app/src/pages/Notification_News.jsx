@@ -1,6 +1,6 @@
 // NotificationNews.jsx
 import React, { useState } from 'react';
-import Sidebar from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/Components/SideBar.jsx';
+import Sidebar from '../Components/SideBar.jsx';
 
 function Notification_News() {
   const [notifications, setNotifications] = useState([

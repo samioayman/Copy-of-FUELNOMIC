@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Card from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/Card.jsx'
-import FLogo from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/assets/FuelnomicLogo.png'
+import Card from '../Card.jsx'
+import FLogo from '../assets/FuelnomicLogo.png'
 
 
 const GetStarted = () => {

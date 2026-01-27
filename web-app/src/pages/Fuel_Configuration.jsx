@@ -1,7 +1,7 @@
 // FuelConfiguration.jsx
 import React, { useState, useEffect } from 'react'
-import supabase from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/helper/supabaseClient.js'
-import Sidebar from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/Components/SideBar.jsx'
+import supabase from '../helper/supabaseClient.js'
+import Sidebar from '../Components/SideBar.jsx'
 
 function FuelConfiguration() {
   const [fuelPrices, setFuelPrices] = useState({})

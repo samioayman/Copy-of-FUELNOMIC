@@ -1,8 +1,8 @@
 // Dashboard.jsx
 import React, { useState, useEffect } from "react";
-import supabase from "/Users/samio_ayman/FYP-Fuelnomic/web-app/src/helper/supabaseClient.js";
+import supabase from "../helper/supabaseClient.js";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "/Users/samio_ayman/FYP-Fuelnomic/web-app/src/Components/SideBar.jsx";
+import Sidebar from "../Components/SideBar.jsx";
 
 function Dashboard() {
   const navigate = useNavigate();

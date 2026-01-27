@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../Card.jsx";
-import FLogo from '/Users/samio_ayman/FYP-Fuelnomic/web-app/src/assets/FuelnomicLogo.png'
+import FLogo from '../assets/FuelnomicLogo.png'
 
 function Home() {
   return (
